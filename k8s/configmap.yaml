@@ -1,0 +1,14 @@
+# Não irá utilizar o arquivo .env dentro do contêiner
+# K8s injetará as variáveis de ambiente
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+  namespace: desafio-api
+
+data:
+  NODE_ENV: "production"
+  DB_HOST:  
+  DB_PORT:
+  DB_NAME: "api_database"
