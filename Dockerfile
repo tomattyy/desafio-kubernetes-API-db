@@ -18,8 +18,8 @@ COPY db.js ./
 COPY server.js ./
 COPY routes.js ./
 
-EXPOSE 3000
+EXPOSE 8080
 
 USER node
 
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
