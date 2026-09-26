@@ -5,10 +5,10 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: api-config
-  namespace: desafio-api
 
 data:
-  NODE_ENV: "production"
-  DB_HOST:  
-  DB_PORT:
+  DB_HOST:  "postgres-service"
+  DB_PORT:  "5432"
   DB_NAME: "api_database"
+  API_PORT: "3000"
+  ENVIRONMENT: "production"
