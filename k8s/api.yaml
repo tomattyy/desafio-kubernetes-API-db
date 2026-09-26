@@ -38,7 +38,7 @@ kind: Service
 metadata:
   name: api-service
 spec:
-  type:
+  type: LoadBalancer
   selector:
     app: minha-api
   ports:
