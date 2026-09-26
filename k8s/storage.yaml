@@ -1,0 +1,24 @@
+# PersistenteVolume (PV)
+apiVersion: v1 
+kind: PersistentVolume
+metadata:
+  name: postgres-pv
+spec:
+  capacity:
+    storage: 10Gi
+  acessModes:
+    - ReadWriteOnce
+  hostPatt:
+    path: "/mnt/data/postgres"
+
+# PersistentVolumeClaim (PVC)
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  acessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
