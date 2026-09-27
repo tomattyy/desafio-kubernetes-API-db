@@ -43,7 +43,7 @@ spec:
             claimName: postgres-pvc
 
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
   name: postgres-service
 spec:
