@@ -1,0 +1,31 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=meubanco
+      - DB_USER=admin
+      - DB_PASS=secretpass
+    
+    depends_on:
+      - postgres
+  
+  postgres:
+    image: postgres:15-alpine
+    ports: 
+      - "5432:5432"
+    
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=secretpass
+      - POSTGRES_DB=meubanco
+    
+    volumes: 
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
