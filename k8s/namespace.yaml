@@ -1,0 +1,7 @@
+# Isolamento para o projeto 
+# Não mistura com outros serviços do cluster
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: desafio-api

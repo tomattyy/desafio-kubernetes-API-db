@@ -1,0 +1,14 @@
+# Não irá utilizar o arquivo .env dentro do contêiner
+# K8s injetará as variáveis de ambiente
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+
+data:
+  DB_HOST:  "postgres-service"
+  DB_PORT:  "5432"
+  DB_NAME: "api_database"
+  API_PORT: "3000"
+  ENVIRONMENT: "production"
